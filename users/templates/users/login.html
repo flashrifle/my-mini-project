@@ -1,16 +1,37 @@
-로그인 화면
-<hr>
+{% extends "users/base.html" %}
+
+{% block contents %}
+
 {% if user.is_authenticated %}
-    로그인에 성공했습니다. 
-    {{ user.username }} 님 환영합니다.
-    
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="jumbotron" style="text-align: center;">
+            로그인에 성공했습니다. 
+            {{ user.username }} 님 환영합니다.
+        </div>
+    </div>
+</div>
     <a href="{% url 'user:logout' %}">로그아웃</a>
 {% else %}
-<form action="" method="POST">
-    {% csrf_token %}    
-    <input name="username" type="text">
-    <input name="password" type="password">
-    <input type="submit" value="로그인">
-</form>
-    <a href="{% url 'user:signup' %}">회원가입</a>
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="jumbotron" style="padding: 100px;">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h3 style="text-align: center;"> 로그인화면 </h3>    
+                <div class="form-grop">
+                    <input class="form-control" placeholder="ID" name="username" type="text">
+                </div>
+                <div class="form-grop">
+                    <input class="form-control" placeholder="PASSWORD" name="password" type="password">
+                </div>
+                <div class="form-grop">
+                    <input class="btn btn-primary form-control" type="submit" value="로그인">
+                </div>
+            </form>
+                <a href="{% url 'user:signup' %}">회원가입</a>
+        </div>
+    </div>
+</div>
 {% endif %}
+{% endblock %}

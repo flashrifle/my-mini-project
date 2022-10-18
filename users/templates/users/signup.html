@@ -1,17 +1,21 @@
-회원가입 페이지
-<br>
+{% extends "users/base.html" %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    <p>아이디</p>
-    <input name="username" type="text">
-    <p>비밀번호</p>
-    <input name="password" type="password">
-    <p>성</p>
-    <input name="firstname" type="text">
-    <p>이름</p>
-    <input name="lastname" type="text">
-    <p>이메일</p>
-    <input name="email" type="email">
-    <input type="submit" value="회원가입">
-</form>
+{% block contents %}
+
+<div class="row mt-5">
+    <div class="col-12">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="jumbotron" style="padding: 50px;">
+                <h3 style="text-align: center;">회원가입 화면</h3>
+                <input class="form-control" placeholder="아이디" name="username" type="text">
+                <input class="form-control" placeholder="비밀번호" name="password" type="password">
+                <input class="form-control" placeholder="성" name="firstname" type="text">
+                <input class="form-control" placeholder="이름" name="lastname" type="text">
+                <input class="form-control" placeholder="이메일" name="email" type="email">
+                <input type="submit" class="btn btn-primary form-control" value="회원가입">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

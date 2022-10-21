@@ -10,16 +10,20 @@
             <th scope="col">제목</th>
             <th scope="col">아이디</th>
             <th scope="col">작성일</th>
+            <th scope="col">수정일</th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>제목 테스트 입니다</td>
-            <td>member</td>
-            <td>2020.12.12</td>
+            {% for bbs in bbslist %}
+            <th scope="row">{{ bbs.id }}</th>
+            <td>{{ bbs.title }}</td>
+            <td>{{ bbs.writer }}</td>
+            <td>{{ bbs.create_at }}</td>
+            <td>{{ bbs.update_at }}</td>
           </tr>
+          {% endfor %}
           </tbody>
       </table>
     </div>

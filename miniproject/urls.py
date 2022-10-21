@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+
 from rest_framework import routers
 from users.views import UserViewSet
+
 
 from users import views
 
@@ -27,7 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include("users.urls")),
     path('bbs/', include("bbs.urls")),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('', RedirectView.as_view(url='auth/login', permanent=True))
 
     #path('login/', views.login_view, name='login')
 ]

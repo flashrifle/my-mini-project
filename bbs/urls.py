@@ -4,5 +4,6 @@ from bbs import views
 app_name = "bbs"
 
 urlpatterns = [
-    path("bbslist/", views.bbs_list, name="bbslist")
+    path("list/", views.bbs_list, name="list"),
+    path("write/", views.bbs_write, name="write")
 ]

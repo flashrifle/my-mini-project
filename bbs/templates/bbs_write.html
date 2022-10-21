@@ -1,0 +1,16 @@
+{% extends "users/base.html" %}
+
+{% block contents %}
+  <div class="row mt-5">
+    <div class="col-12">
+      <h3>글 등록</h3>
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="글 등록">
+        <a href="{% url 'bbs:list' %}" class="btn btn-primary">글 목록</a>
+      </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

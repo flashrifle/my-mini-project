@@ -18,7 +18,9 @@
           <tr>
             {% for bbs in bbslist %}
             <th scope="row">{{ bbs.id }}</th>
-            <td>{{ bbs.title }}</td>
+            <td>
+              <a href="{% url 'bbs:detail' bbs.id %}">{{ bbs.title }}</a>
+            </td>
             <td>{{ bbs.writer }}</td>
             <td>{{ bbs.create_at }}</td>
             <td>{{ bbs.update_at }}</td>

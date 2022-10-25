@@ -5,5 +5,6 @@ app_name = "bbs"
 
 urlpatterns = [
     path("list/", views.bbs_list, name="list"),
-    path("write/", views.bbs_write, name="write")
+    path("write/", views.bbs_write, name="write"),
+    path("detail/<int:pk>", views.bbs_detail, name="detail")
 ]

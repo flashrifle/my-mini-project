@@ -1,4 +1,3 @@
-from tkinter.messagebox import RETRY
 from django.shortcuts import redirect, render
 from .models import bbs
 from .forms import BoardForm
@@ -19,3 +18,7 @@ def bbs_write(request):
         form = BoardForm()
     context = {'form': form}
     return render(request, 'bbs_write.html', context)
+
+def bbs_detail(request, pk):
+    bbsdetail = bbs.objects.get(pk=pk)
+    return render(request, 'bbs_detail.html', {'bbsdetail':bbsdetail})

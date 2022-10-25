@@ -1,0 +1,30 @@
+{% extends "users/base.html" %}
+
+{% block contents %}
+<div class="row mt-5">
+  <div class="col-12">
+    <div class="form-group">
+        <label for="id">게시물 번호 {{ bbsdetail.id }}</label>
+      <div>
+        <label for="title">제목</label>
+        <label for="writer">작성자 {{ bbsdetail.writer}}</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          value="{{ bbsdetail.title }}"
+          readonly />
+      </div>
+      <div>
+        <label for="content">내용</label>
+        <input
+        type="text"
+        class="form-control"
+        id="title"
+        value="{{ bbsdetail.content }}"
+        readonly />
+      </div>
+  </div>
+    <a href="{% url 'bbs:list' %}" class="btn btn-primary">글 목록</a>
+</div>
+{% endblock %}

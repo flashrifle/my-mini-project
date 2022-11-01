@@ -3,6 +3,8 @@ from .serializer import UserSerializer
 
 from django.shortcuts import redirect, render
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import make_password, check_password
+
 
 
 from .models import User

@@ -18,13 +18,15 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 
 from rest_framework import routers
+from bbs.views import BbsviewSet
 from users.views import UserViewSet
 
 
 from users import views
 
 router = routers.DefaultRouter()
-router.register('users', UserViewSet)
+router.register('users', UserViewSet) # 유저 정보
+router.register('bbs', BbsviewSet) # 게시판 정보
 
 urlpatterns = [
     path('admin/', admin.site.urls),
